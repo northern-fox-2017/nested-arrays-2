@@ -12,7 +12,19 @@ let roster = [
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
 function convert_roster_format (nestedArray) {
-  // your convert code here
+  var result = [];
+  var titles = nestedArray[0]; //get titles
+  
+  for(var i=1; i < nestedArray.length; i++){
+    var person = {};
+    
+    for(var k=0; k < titles.length; k++){
+      person[titles[k]] = nestedArray[i][k];
+    }
+  result.push(person);    
+  }
+  
+  return result;
 }
 
 let object_roster = convert_roster_format(roster)
