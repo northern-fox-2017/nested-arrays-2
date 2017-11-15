@@ -18,7 +18,7 @@ function convert_roster_format (nestedArray) {
   
   for(let i= 1 ; i< nestedArray.length;i++){
     let nest = {}
-    for(let j=0;j< nestedArray[i].length;j++){
+    for(let j=0;j< nestedArray[0].length;j++){
       nest[nestedArray[0][j]] = nestedArray[i][j]
 
   }
