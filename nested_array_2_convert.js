@@ -9,14 +9,32 @@ let roster = [
   [22, 'MK DiBoux ', 'Small Forward ', [11, 0, 23, 17, 0] ]
 ]
 
+// console.log(roster.length);
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
 function convert_roster_format (nestedArray) {
-  // your convert code here
+  
+  let arrOfObj = []
+  
+  for (let i = 1; i < nestedArray.length; i++) {
+    let objInArr = {}
+    for (let j = 0; j < nestedArray[i].length; j++) {
+      objInArr[nestedArray[0][j]] = nestedArray[i][j]
+    }
+    arrOfObj.push(objInArr)
+  }
+  return arrOfObj
 }
 
 let object_roster = convert_roster_format(roster)
 console.log(object_roster[2])
+// console.log(object_roster);
+// console.log(object_roster[1]);
+// console.log(object_roster[1].i);
+// console.log('Keys ' + Object.keys(object_roster[1]));
+// Object.keys(object_roster[1])
+// object_roster[0].j = true
+// console.log(object_roster);
 
 // => { "Number": 31, "Name": "Harvey Kay", "Position": "Shooting Guard", "Points per Game": [0, 30, 16, 0, 25] }
 
