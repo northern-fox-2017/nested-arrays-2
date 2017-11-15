@@ -16,10 +16,10 @@ function convert_roster_format (nestedArray) {
 
   for (var i = 1; i < nestedArray.length; i++) {
     var obj = {};
-    obj[nestedArray[0][0]] = nestedArray[i][0];
-    obj[nestedArray[0][1]] = nestedArray[i][1];
-    obj[nestedArray[0][2]] = nestedArray[i][2];
-    obj[nestedArray[0][3]] = nestedArray[i][3];
+    for (var j = 0; j < nestedArray.length; j++) {
+      obj[nestedArray[0][j]] = nestedArray[i][j];
+    }
+
     arr.push(obj);
   }
 
