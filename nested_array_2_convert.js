@@ -1,5 +1,9 @@
 'use strict'
 
+/* 1. buat array baru yang berisi object dimana object sepanjang array.length -1
+   2. buat perulangan untuk data nya sebanyak isi dari array ke n
+*/
+
 let roster = [
   ['Number', 'Name', 'Position', 'Points per Game'],
   [12, 'Joe Schmo', 'Center', [14, 32, 7, 0, 23] ],
@@ -13,6 +17,20 @@ let roster = [
 
 function convert_roster_format (nestedArray) {
   // your convert code here
+  let newArr = [];
+
+  for (let i = 0; i < nestedArray.length-1; i++) {
+    newArr[i] = {}
+    for (let j = 0; j < nestedArray[0].length; j++) {
+      // console.log(nestedArray[i+1][j]);
+      // console.log('ini i ',i);
+      // console.log('ini j ',j);
+
+      newArr[i][nestedArray[0][j]] = nestedArray[i+1][j];
+    }
+  }
+
+  return newArr;
 }
 
 let object_roster = convert_roster_format(roster)
