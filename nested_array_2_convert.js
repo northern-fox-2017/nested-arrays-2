@@ -19,19 +19,17 @@ let arr = [];
       obj[nestedArray[0][j].toLowerCase()] = nestedArray[i][j];
       arr.push(obj);
 }
-
-console.log(arr);
-
+return arr;
 }
 
 let object_roster = convert_roster_format(roster);
 
-// console.log(object_roster[2]);
+console.log(object_roster[2]);
 
 // => { "Number": 31, "Name": "Harvey Kay", "Position": "Shooting Guard", "Points per Game": [0, 30, 16, 0, 25] }
 
-// console.log(object_roster[0]['Name'] == 'Joe Schmo') // outputs true
-//
-// module.exports = {
-//   convert_roster_format
-// }
+console.log(object_roster[0]['name'] == 'Joe Schmo') // outputs true
+
+module.exports = {
+  convert_roster_format
+}
