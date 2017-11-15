@@ -11,8 +11,19 @@ let roster = [
 
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
-function convert_roster_format (nestedArray) {
+function convert_roster_format (nestedArray, index=1, arrObj=[]) {
   // your convert code here
+  let obj = {}
+
+  if(index == nestedArray.length-1){
+    return arrObj
+  }else{
+    for(let i = 0; i < roster[0].length; i++){
+      obj[roster[0][i]] = roster[index][i]
+    }
+    arrObj.push(obj)
+    return convert_roster_format(nestedArray, index+1, arrObj)
+  }
 }
 
 let object_roster = convert_roster_format(roster)
@@ -22,6 +33,6 @@ console.log(object_roster[2])
 
 console.log(object_roster[0]['Name'] == 'Joe Schmo') // outputs true
 
-module.exports = {
-  convert_roster_format
-}
+// module.exports = {
+//   convert_roster_format
+// }
